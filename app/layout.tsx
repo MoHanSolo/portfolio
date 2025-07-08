@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'BrendanMohan.tech',
     images: [
       {
-        url: 'https://brendanmohan.tech/og-image.JPG',
+        url: 'https://brendanmohan.tech/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Brendan Mohan Portfolio OG Image',

@@ -14,19 +14,18 @@ export default function AboutPage() {
             {/* Flex container: image + content */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
                 {/* Headshot */}
-                <div className="relative w-32 h-40 rounded-[2rem] overflow-hidden">
+                <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden">
                     <Image
                         src="/og-image.jpg"
-                        width={600}
-                        height={600}
+                        fill
                         alt="Brendan Mohan headshot"
-                        className="rounded-full object-cover"
+                        className="object-cover"
                     />
                     </div>
 
 
                 {/* Greeting + Bio */}
-                <div className="space-y-4 text-gray-200">
+                <div className="space-y-4 text-gray-200 flex-1">
                     <h2 className="text-2xl font-semibold">Hi, nice to meet you!</h2>
 
                     <p>
