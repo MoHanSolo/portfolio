@@ -14,6 +14,7 @@ export default function HomePage() {
           alt="Brendan Mohan"
           fill
           className="object-cover"
+          style={{ objectPosition: '50% 30%' }}
           />
       </div>
       <h1 className="text-5xl font-bold mb-4">Hi, I'm Brendan Mohan</h1>
