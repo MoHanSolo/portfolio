@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Tech Stack 
+
+Next.js (App Router + Metadata API), TypeScript, Tailwind CSS, React, Node.js API Routes, Vercel (CI/CD + serverless), Git/Github
+
+## Key Features
+
+Static & Dynamic Routing
+Responsive, Accessible UI
+SEO & Performance
+Contact Form
+Deployment & DevOps
+Code Quality Managed with ESLint, Prettier, Husky, and lint-staged
+
+
 ## Getting Started
 
 First, run the development server:
