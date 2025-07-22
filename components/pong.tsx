@@ -120,8 +120,8 @@ export default function Pong() {
     <div className="relative flex justify-center items-center mt-25 mb-10">
       <canvas
         ref={canvasRef}
-        width={WIDTH}
-        height={HEIGHT}
+        width={600}
+        height={300}
         className="bg-black border-4 border-green-500 rounded-lg"
         tabIndex={0}
       />

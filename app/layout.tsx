@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+<link rel="icon" href="/favicon.ico" />
 
 const bitcount = localFont({
   src: [
