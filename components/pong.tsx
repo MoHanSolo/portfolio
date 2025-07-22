@@ -1,4 +1,6 @@
+"use client";
 import React, { useRef, useEffect } from "react";
+import { useState } from "react";
 
 const WIDTH = 600;
 const HEIGHT = 300;
@@ -9,8 +11,10 @@ const BALL_SIZE = 10;
 export default function Pong() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(null);
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
+    if (!started) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -110,10 +114,10 @@ export default function Pong() {
       window.removeEventListener("keyup", handleKeyUp);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, []);
+  }, [started]);
 
   return (
-    <div className="flex justify-center items-center my-8">
+    <div className="relative flex justify-center items-center mt-25 mb-10">
       <canvas
         ref={canvasRef}
         width={WIDTH}
@@ -121,6 +125,15 @@ export default function Pong() {
         className="bg-black border-4 border-green-500 rounded-lg"
         tabIndex={0}
       />
+      {!started && (
+        <button
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-600 text-4xl rounded-full w-24 aspect-square flex items-center justify-center shadow-lg hover:bg-green-700 transition"
+          style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
+          onClick={() => setStarted(true)}
+        >
+          GO!
+        </button>
+      )}
     </div>
-  );
-}
+  )
+};
