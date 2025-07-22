@@ -32,7 +32,7 @@ export default function Pong() {
             
             // Paddles
             ctx.fillStyle = "#22c55e"; // Paddle Color - Green
-            ctx.fillRect(10, leftPaddelY, PADDLE_WIDTH, PADDLE_HEIGHT);
+            ctx.fillRect(10, leftPaddleY, PADDLE_WIDTH, PADDLE_HEIGHT);
             ctx?.fillRect(WIDTH - 20, rightPaddleY, PADDLE_WIDTH, PADDLE_HEIGHT)
 
             // Ball
