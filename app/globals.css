@@ -1,4 +1,202 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bitcount Cursive */
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Cursive';
+  src: url('/fonts/bitcount/Bitcount_Cursive-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bitcount Roman */
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount Roman';
+  src: url('/fonts/bitcount/Bitcount_Roman-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bitcount Main */
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitcount';
+  src: url('/fonts/bitcount/Bitcount-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --background: #ffffff;
@@ -16,4 +214,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #22c55e;
 }
