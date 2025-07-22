@@ -8,7 +8,7 @@ const BALL_SIZE = 10;
 
 export default function Pong() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
