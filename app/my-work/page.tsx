@@ -115,18 +115,18 @@ export default function MyWorkPage() {
            style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
             View Live
         </a>
-            )}
-            {project.githubUrl && (
-                <a href={project.githubUrl} 
+        )}
+        {project.githubUrl && (
+            <a href={project.githubUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-4 py-2 border border-gray-500 text-gray-300 rounded hover:bg-gray-600 transition"
                 style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
                     GitHub
-                </a>
-            )}
+            </a>
+        )}
+            </div>
         </div>
-                        </div>
                     ))}
                 </div>
             </div>
