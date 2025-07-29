@@ -4,6 +4,14 @@ import localFont from "next/font/local";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+export const metadata = {
+  title: "Brendan Mohan - Full Stack Developer",
+  description: "Hi! My name is Brendan Mohan, a MERN-stack developer",
+  icons: {
+    icon: '/favicon.ico',
+  },
+}
+
 const bitcount = localFont({
   src: [
     {
@@ -32,7 +40,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="flex flex-col min-h-screen">
-        <Header />
+        {/* <Header /> */}
 
         <main className="flex-grow container mx-auto px-4 py-8">
         {children}
