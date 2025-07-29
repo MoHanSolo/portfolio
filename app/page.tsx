@@ -10,16 +10,6 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* <div className="absolute top-25 left-25 w-32 h-32 rounded-full overflow-hidden">
-        <Image
-          src="/og-image.jpg"
-          alt="Brendan Mohan"
-          width={160}
-          height={160}
-          className="object-cover rounded-full mb-6"
-          style={{ objectPosition: '50% 30%' }}
-        />
-      </div> */}
       <section className="text-center min-h-screen p-8">
         <h1 className="text-5xl" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
           Hi, I'm Brendan Mohan
@@ -31,11 +21,13 @@ export default function HomePage() {
               }}>
           I build full-stack applications, like this one, with Next.js, React, and Tailwind CSS!
         </p>
-          <Pong />
-        <div className="space-x-4">
+        <Pong />
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center space-x-4 mt-8">
           <a
             href="/about"
-            className="px-6 py-3 text-white rounded-lg hover:bg-blue-700 transition"
+            className="px-6 py-3 text-white rounded-lg hover:bg-green-700 transition"
             style={{ 
               backgroundColor: "#016630",
               fontFamily: 'Bitcount, Arial, Helvetica, sans-serif'
@@ -44,8 +36,8 @@ export default function HomePage() {
             About Me
           </a>
           <a
-            href="/projects"
-            className="px-6 py-3 text-white rounded-lg hover:bg-blue-700 transition"
+            href="/my-work"
+            className="px-6 py-3 text-white rounded-lg hover:bg-green-700 transition"
             style={{ 
               backgroundColor: "#016630",
               fontFamily: 'Bitcount, Arial, Helvetica, sans-serif'
@@ -53,6 +45,49 @@ export default function HomePage() {
           >
             My Work
           </a>
+        </div>
+
+        {/* Contact Form */}
+        <div className="max-w-md mx-auto mt-12">
+          <h2 className="text-2xl mb-6 text-white" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+            Get In Touch
+          </h2>
+          <form action="mailto:your-email@example.com" method="post" encType="text/plain" className="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-600 focus:border-green-500 focus:outline-none"
+              style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-600 focus:border-green-500 focus:outline-none"
+              style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows={4}
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-600 focus:border-green-500 focus:outline-none resize-none"
+              style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
+              required
+            ></textarea>
+            <button
+              type="submit"
+              className="w-full px-6 py-3 text-white rounded-lg hover:bg-green-700 transition"
+              style={{ 
+                backgroundColor: "#016630",
+                fontFamily: 'Bitcount, Arial, Helvetica, sans-serif'
+              }}
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </section>
     </>
