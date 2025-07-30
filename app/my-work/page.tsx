@@ -71,7 +71,7 @@ export default function MyWorkPage() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {shopifyProjects.map((project, index) => (
-                        <div key={index} className="bg-gray-800 rounded-lg p-6 border-l-4 border-green-500">
+                        <div key={index} className="bg-gray-800 rounded-lg p-6 border-l-4 border-green-500 relative">
                             <div className="flex justify-between items-start mb-3">
                                 <h3 className="text-xl font-bold text-white"
                                     style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
@@ -97,7 +97,7 @@ export default function MyWorkPage() {
                                 </div>
                             )}
                             
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-2 mb-4">
                                 {project.tech.map((tech, techIndex) => (
                                     <span key={techIndex} 
                                           className="px-3 py-1 bg-green-600 text-white text-sm rounded-full"
@@ -106,27 +106,43 @@ export default function MyWorkPage() {
                                     </span>
                                 ))}
                             </div>
-                            <div className="flex space-x-4 mt-4">
-    {project.liveUrl && (
-        <a href={project.liveUrl} 
-           target="_blank"
-           rel="noopener noreferrer"
-           className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-           style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
-            View Live
-        </a>
-        )}
-        {project.githubUrl && (
-            <a href={project.githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-4 py-2 border border-gray-500 text-gray-300 rounded hover:bg-gray-600 transition"
-                style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
-                    GitHub
-            </a>
-        )}
-            </div>
-        </div>
+                            
+                            <div className="flex space-x-4">
+                                {project.liveUrl && (
+                                    <a href={project.liveUrl} 
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                                       style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                                        View Live
+                                    </a>
+                                )}
+                                {project.githubUrl && (
+                                    <a href={project.githubUrl} 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       className="px-4 py-2 border border-gray-500 text-gray-300 rounded hover:bg-gray-600 transition"
+                                       style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                                        GitHub
+                                    </a>
+                                )}
+                            </div>
+
+                            {/* Coming Soon Overlay
+                            <div className="absolute inset-0 bg-black bg-opacity-80 rounded-lg flex items-center justify-center">
+                                <div className="text-center">
+                                    <div className="text-4xl mb-2">🚧</div>
+                                    <div className="text-xl font-bold text-white mb-2"
+                                         style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                                        Coming Soon
+                                    </div>
+                                    <div className="text-sm text-gray-300"
+                                         style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                                        Project details in progress
+                                    </div>
+                                </div>
+                            </div> */}
+                        </div>
                     ))}
                 </div>
             </div>
@@ -139,7 +155,7 @@ export default function MyWorkPage() {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {personalProjects.map((project, index) => (
-                        <div key={index} className="bg-gray-800 rounded-lg p-6 border-l-4 border-blue-500">
+                        <div key={index} className="bg-gray-800 rounded-lg p-6 border-l-4 border-blue-500 relative">
                             <div className="flex justify-between items-start mb-3">
                                 <h3 className="text-xl font-bold text-white"
                                     style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
@@ -183,6 +199,21 @@ export default function MyWorkPage() {
                                         GitHub
                                     </a>
                                 )}
+                            </div>
+
+                            {/* Coming Soon Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-80 rounded-lg flex items-center justify-center">
+                                <div className="text-center">
+                                    <div className="text-4xl mb-2">🚧</div>
+                                    <div className="text-xl font-bold text-white mb-2"
+                                         style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                                        Coming Soon
+                                    </div>
+                                    <div className="text-sm text-gray-300"
+                                         style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                                        Project details in progress
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
