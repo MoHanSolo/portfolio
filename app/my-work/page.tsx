@@ -128,8 +128,9 @@ export default function MyWorkPage() {
                                 )}
                             </div>
 
-                            {/* Coming Soon Overlay
-                            <div className="absolute inset-0 bg-black bg-opacity-80 rounded-lg flex items-center justify-center">
+                            {/* Coming Soon Overlay */}
+                            {index !== 0 && (
+                            <div className="absolute inset-0 bg-gray-800 bg-opacity-80 rounded-lg flex items-center justify-center">
                                 <div className="text-center">
                                     <div className="text-4xl mb-2">🚧</div>
                                     <div className="text-xl font-bold text-white mb-2"
@@ -141,7 +142,8 @@ export default function MyWorkPage() {
                                         Project details in progress
                                     </div>
                                 </div>
-                            </div> */}
+                            </div>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -202,7 +204,7 @@ export default function MyWorkPage() {
                             </div>
 
                             {/* Coming Soon Overlay */}
-                            <div className="absolute inset-0 bg-black bg-opacity-80 rounded-lg flex items-center justify-center">
+                            <div className="absolute inset-0 bg-gray-800 bg-opacity-80 rounded-lg flex items-center justify-center">
                                 <div className="text-center">
                                     <div className="text-4xl mb-2">🚧</div>
                                     <div className="text-xl font-bold text-white mb-2"
