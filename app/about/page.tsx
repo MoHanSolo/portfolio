@@ -7,13 +7,16 @@ export const metadata = {
 
 export default function AboutPage() {
     return (
-        <section className="max-w-3xl mx-auto space-y-8 px-4 py-12">
-            {/* Page title */}
-            <h1 className="text-4xl font-bold text-center" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>About Me</h1>
+        <section className="max-w-3xl mx-auto space-y-6 sm:space-y-8 px-4 py-8 sm:py-12">
+            {/* Page title - responsive size */}
+            <h1 className="text-3xl sm:text-4xl font-bold text-center" 
+                style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                About Me
+            </h1>
 
-            {/* Flex container: image + content */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
-                {/* Headshot */}
+            {/* Flex container: responsive layout */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
+                {/* Headshot - consistent sizing */}
                 <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden">
                     <Image
                         src="/og-image.jpg"
@@ -23,28 +26,27 @@ export default function AboutPage() {
                     />
                 </div>
 
-
-                {/* Greeting + Bio */}
-                <div className="space-y-4 text-centers text-gray-200 flex-1">
-                    <h2 className="text-2xl font-semibold" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>Hi, nice to meet you!</h2>
-                    <p className="text-xl">
-                        My name is Brendan Mohan and I'm a full-stack developer who loves building perfomant, accessible web apps using Next.js, React, and Tailwind.
+                {/* Greeting + Bio - responsive text */}
+                <div className="space-y-4 text-center sm:text-left text-gray-200 flex-1">
+                    <h2 className="text-xl sm:text-2xl font-semibold" 
+                        style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+                        Hi, nice to meet you!
+                    </h2>
+                    <p className="text-lg sm:text-xl">
+                        My name is Brendan Mohan and I'm a full-stack developer who loves building performant, accessible web apps using Next.js, React, and Tailwind.
                     </p>
 
-                    <br />
-
-                    <p className="text-xl">
-                        I’m a full-stack web developer who loves turning business goals into clean, high-performing Shopify experiences. My career began in market research—sourcing and validating C-suite contacts for Alexander Group via Mack & Associates—which sharpened my eye for data accuracy, process automation (Excel macros, PitchBook), and client collaboration. After completing <a href="https://generalassemb.ly/students/courses/software-engineering-bootcamp" target="_blank" rel="noopener">General Assembly</a>’s full-stack engineering bootcamp, I joined <a href="https://www.dekstech.com" target="_blank" rel="noopener">DeksTech</a>, where I’ve built custom Liquid/CSS/JavaScript solutions, state-by-state shipping calculators, QuickBooks and Zapier integrations, and performance optimizations. Now, I’m eager to bring my blend of research rigor, client-first communication, and practical engineering chops to a full-time web-development role at an agency or in-house team. 
+                    <p className="text-lg sm:text-xl">
+                        I'm a full-stack web developer who loves turning business goals into clean, high-performing Shopify experiences...
                     </p>
                 </div>
             </div>
 
-            {/* Go Home Button */}
-            <div className="flex justify-center">
-                <div className="text-center">
+            {/* Go Home Button - responsive sizing */}
+            <div className="flex justify-center pt-4 sm:pt-8">
                 <a
                     href="/"
-                    className="inline-block px-6 py-3 text-white rounded-lg hover:bg-green-700 transition"
+                    className="inline-block px-4 sm:px-6 py-2 sm:py-3 text-white rounded-lg hover:bg-green-700 transition text-sm sm:text-base"
                     style={{
                         backgroundColor: "#016630",
                         fontFamily: 'Bitcount, Arial, Helvetica, sans-serif'
@@ -52,7 +54,6 @@ export default function AboutPage() {
                 >
                     ← Back to Home
                 </a>
-            </div>
             </div>
         </section>
     )

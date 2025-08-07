@@ -142,53 +142,59 @@ export default function Pong() {
   }, [started]);
 
   return (
-    <div className="relative flex flex-col justify-center items-center mt-25 mb-10">
-      
-      {/* Scoreboard */}
-      <div className="mb-4 text-white text-2xl" 
-          style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
-        <span>Player: {leftScore}</span>
-        <span className="mx-8">|</span>
-        <span>Computer: {rightScore}</span>
-      </div>
+  <div className="relative flex flex-col justify-center items-center mt-6 sm:mt-25 mb-6 sm:mb-10">
+    
+    {/* Scoreboard - smaller text on mobile */}
+    <div className="mb-4 text-lg sm:text-2xl text-white" 
+         style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+      <span>Player: {leftScore}</span>
+      <span className="mx-4 sm:mx-8">|</span>
+      <span>Computer: {rightScore}</span>
+    </div>
 
+    {/* Canvas - responsive sizing */}
+    <div className="w-full max-w-full overflow-hidden">
       <canvas
         ref={canvasRef}
         width={600}
         height={300}
-        className="bg-black border-4 border-green-500 rounded-lg"
+        className="bg-black border-2 sm:border-4 border-green-500 rounded-lg w-full max-w-[600px] h-auto"
+        style={{ aspectRatio: '2/1' }}
         tabIndex={0}
       />
-      {!started && (
-        <button
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-600 text-4xl rounded-full w-24 aspect-square flex items-center justify-center shadow-lg hover:bg-green-700 transition"
-          style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
-          onClick={() => setStarted(true)}
-        >
-          GO!
-        </button>
-      )}
-      {gameOver && (
-  <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center">
-    <div className="text-center text-white p-8">
-      <div className="text-4xl mb-4" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
-        {leftScore >= 5 ? "You Win!" : "Computer Wins!"}
-      </div>
-      <button 
-        className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+    </div>
+    
+    {!started && (
+      <button
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-green-600 text-2xl sm:text-4xl rounded-full w-16 sm:w-24 aspect-square flex items-center justify-center shadow-lg hover:bg-green-700 transition"
         style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
-        onClick={() => {
-          setLeftScore(0);
-          setRightScore(0);
-          setGameOver(false);
-          setStarted(false);
-        }}
+        onClick={() => setStarted(true)}
       >
-        Play Again
+        GO!
       </button>
-    </div>
+    )}
+
+    {gameOver && (
+      <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4">
+        <div className="text-center text-white p-4 sm:p-8 max-w-sm">
+          <div className="text-2xl sm:text-4xl mb-4" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+            {leftScore >= 5 ? "You Win!" : "Computer Wins!"}
+          </div>
+          <button 
+            className="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm sm:text-base"
+            style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
+            onClick={() => {
+              setLeftScore(0);
+              setRightScore(0);
+              setGameOver(false);
+              setStarted(false);
+            }}
+          >
+            Play Again
+          </button>
+        </div>
+      </div>
+    )}
   </div>
-)}
-    </div>
   )
 };
