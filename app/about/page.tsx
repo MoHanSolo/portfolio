@@ -9,7 +9,7 @@ export default function AboutPage() {
     return (
         <section className="max-w-3xl mx-auto space-y-8 px-4 py-12">
             {/* Page title */}
-            <h1 className="text-4xl font-bold text-center">About Me</h1>
+            <h1 className="text-4xl font-bold text-center" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>About Me</h1>
 
             {/* Flex container: image + content */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
@@ -25,16 +25,34 @@ export default function AboutPage() {
 
 
                 {/* Greeting + Bio */}
-                <div className="space-y-4 text-gray-200 flex-1">
-                    <h2 className="text-2xl font-semibold">Hi, nice to meet you!</h2>
-
-                    <p>
+                <div className="space-y-4 text-centers text-gray-200 flex-1">
+                    <h2 className="text-2xl font-semibold" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>Hi, nice to meet you!</h2>
+                    <p className="text-xl">
                         My name is Brendan Mohan and I'm a full-stack developer who loves building perfomant, accessible web apps using Next.js, React, and Tailwind.
                     </p>
-                    <p>
+
+                    <br />
+
+                    <p className="text-xl">
                         I’m a full-stack web developer who loves turning business goals into clean, high-performing Shopify experiences. My career began in market research—sourcing and validating C-suite contacts for Alexander Group via Mack & Associates—which sharpened my eye for data accuracy, process automation (Excel macros, PitchBook), and client collaboration. After completing <a href="https://generalassemb.ly/students/courses/software-engineering-bootcamp" target="_blank" rel="noopener">General Assembly</a>’s full-stack engineering bootcamp, I joined <a href="https://www.dekstech.com" target="_blank" rel="noopener">DeksTech</a>, where I’ve built custom Liquid/CSS/JavaScript solutions, state-by-state shipping calculators, QuickBooks and Zapier integrations, and performance optimizations. Now, I’m eager to bring my blend of research rigor, client-first communication, and practical engineering chops to a full-time web-development role at an agency or in-house team. 
                     </p>
                 </div>
+            </div>
+
+            {/* Go Home Button */}
+            <div className="flex justify-center">
+                <div className="text-center">
+                <a
+                    href="/"
+                    className="inline-block px-6 py-3 text-white rounded-lg hover:bg-green-700 transition"
+                    style={{
+                        backgroundColor: "#016630",
+                        fontFamily: 'Bitcount, Arial, Helvetica, sans-serif'
+                    }}
+                >
+                    ← Back to Home
+                </a>
+            </div>
             </div>
         </section>
     )

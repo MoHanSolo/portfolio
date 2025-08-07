@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PongPreview from "../components/pong-preview";
 import Pong from "../components/pong";
+import ContactForm from "../components/contact-form";
 
 export const metadata = {
   title: 'Brendan Mohan - Full Stack Developer',
@@ -22,6 +23,11 @@ export default function HomePage() {
           I build full-stack applications, like this one, with Next.js, React, and Tailwind CSS!
         </p>
         <Pong />
+
+        {/* Pong Instructions */}
+        <p className="text-lg text-gray-400 mt-4" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+            Use the arrow keys to move the paddle and hit the ball!
+        </p>
 
         {/* Navigation Buttons */}
         <div className="flex justify-center space-x-4 mt-8">
@@ -47,48 +53,7 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* Contact Form */}
-        <div className="max-w-md mx-auto mt-12">
-          <h2 className="text-2xl mb-6 text-white" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
-            Get In Touch
-          </h2>
-          <form action="mailto:your-email@example.com" method="post" encType="text/plain" className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-600 focus:border-green-500 focus:outline-none"
-              style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-600 focus:border-green-500 focus:outline-none"
-              style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows={4}
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 border border-gray-600 focus:border-green-500 focus:outline-none resize-none"
-              style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
-              required
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full px-6 py-3 text-white rounded-lg hover:bg-green-700 transition"
-              style={{ 
-                backgroundColor: "#016630",
-                fontFamily: 'Bitcount, Arial, Helvetica, sans-serif'
-              }}
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        <ContactForm />
       </section>
     </>
   );

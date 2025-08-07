@@ -12,6 +12,9 @@ export default function Pong() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>(null);
   const [started, setStarted] = useState(false);
+  const [leftScore, setLeftScore] = useState(0);
+  const [rightScore, setRightScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (!started) return;
@@ -80,16 +83,38 @@ export default function Pong() {
         ballX = WIDTH - 20 - BALL_SIZE;
       }
 
-      // Ball out of bounds (reset)
-      if (ballX < 0 || ballX > WIDTH) {
+      // Ball out of bounds (handle scoring & reset)
+      if (ballX < 0) {
+        setRightScore(prev => {
+          const newScore = prev + 1;
+          if (newScore >= 5) {
+            setGameOver(true);
+          }
+          return newScore;
+        });
         ballX = WIDTH / 2 - BALL_SIZE / 2;
         ballY = HEIGHT / 2 - BALL_SIZE / 2;
         ballVX = 3 * (Math.random() > 0.5 ? 1 : -1);
         ballVY = 2 * (Math.random() > 0.5 ? 1 : -1);
       }
-    }
+      if (ballX > WIDTH) {
+        setLeftScore(prev => {
+          const newScore = prev + 1;
+          if (newScore >= 5) {
+            setGameOver(true);
+          }
+          return newScore;
+        });
+        ballX = WIDTH / 2 - BALL_SIZE / 2;
+        ballY = HEIGHT / 2 - BALL_SIZE / 2;
+        ballVX = 3 * (Math.random() > 0.5 ? 1 : -1);
+        ballVY = 2 * (Math.random() > 0.5 ? 1 : -1);
+      }
+    } 
 
     function loop() {
+      if (gameOver) return; 
+      
       update();
       draw();
       animationRef.current = requestAnimationFrame(loop);
@@ -117,7 +142,16 @@ export default function Pong() {
   }, [started]);
 
   return (
-    <div className="relative flex justify-center items-center mt-25 mb-10">
+    <div className="relative flex flex-col justify-center items-center mt-25 mb-10">
+      
+      {/* Scoreboard */}
+      <div className="mb-4 text-white text-2xl" 
+          style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+        <span>Player: {leftScore}</span>
+        <span className="mx-8">|</span>
+        <span>Computer: {rightScore}</span>
+      </div>
+
       <canvas
         ref={canvasRef}
         width={600}
@@ -134,6 +168,27 @@ export default function Pong() {
           GO!
         </button>
       )}
+      {gameOver && (
+  <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center">
+    <div className="text-center text-white p-8">
+      <div className="text-4xl mb-4" style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}>
+        {leftScore >= 5 ? "You Win!" : "Computer Wins!"}
+      </div>
+      <button 
+        className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+        style={{ fontFamily: 'Bitcount, Arial, Helvetica, sans-serif' }}
+        onClick={() => {
+          setLeftScore(0);
+          setRightScore(0);
+          setGameOver(false);
+          setStarted(false);
+        }}
+      >
+        Play Again
+      </button>
+    </div>
+  </div>
+)}
     </div>
   )
 };
